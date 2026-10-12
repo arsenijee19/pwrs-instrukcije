@@ -18,6 +18,7 @@ mkdir -p "$B/.next"
 cp -R .next/static "$B/.next/static"
 cp -R public "$B/public"
 cp "$ROOT/scripts/cpanel-app.js" "$B/app.js"
+if [ -f "$OUT/config.env" ]; then cp "$OUT/config.env" "$B/config.env"; else echo "! deploy/config.env ne postoji; napravite ga (vidi docs/CPANEL.md)"; fi
 echo "→ Linux binarni paketi za sharp (cPanel je Linux x64)"
 SHARP_VER="$(node -p "require('./node_modules/sharp/package.json').version")"
 mkdir -p "$WORK/linux" && cd "$WORK/linux" && npm init -y >/dev/null
