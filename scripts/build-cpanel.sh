@@ -16,7 +16,8 @@ B="$WORK/bundle"; mkdir -p "$B"
 cp -R .next/standalone/. "$B/"
 mkdir -p "$B/.next"
 cp -R .next/static "$B/.next/static"
-cp -R public "$B/public"
+mkdir -p "$B/public"
+cp -R public/. "$B/public/"   # spajanje (standalone već može imati public)
 cp "$ROOT/scripts/cpanel-app.js" "$B/app.js"
 if [ -f "$OUT/config.env" ]; then cp "$OUT/config.env" "$B/config.env"; else echo "! deploy/config.env ne postoji; napravite ga (vidi docs/CPANEL.md)"; fi
 echo "→ Linux binarni paketi za sharp (cPanel je Linux x64)"

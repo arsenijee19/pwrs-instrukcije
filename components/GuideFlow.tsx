@@ -106,9 +106,21 @@ export function GuideFlow({ guide, content, preview = false, lang = "sr" }: { gu
   }, [phase, idx, steps.length, go]);
 
   useEffect(() => {
-    // unapred učitaj slike sledećeg koraka da prelaz bude trenutan
-    const next = steps[idx + 1];
-    next?.images.forEach((im) => { const i = new Image(); i.src = `${im.src}-1600.webp`; });
+    // Unapred učitaj slike narednih koraka (isti srcset/sizes kao <img>, pa browser povuče baš tu varijantu),
+    // da prelazak između koraka bude trenutan i na sporijem hostingu.
+    const queue = steps.slice(idx + 1).flatMap((st) => st.images);
+    let cancelled = false;
+    const run = () => {
+      const im = queue.shift();
+      if (!im || cancelled) return;
+      const el = new Image();
+      el.sizes = "(min-width: 768px) 720px, 100vw";
+      el.srcset = `${im.src}-800.webp 800w, ${im.src}-1600.webp ${Math.max(im.w, 1600)}w`;
+      el.src = `${im.src}-1600.webp`;
+      el.onload = el.onerror = () => setTimeout(run, 30);
+    };
+    const t = setTimeout(run, 400);
+    return () => { cancelled = true; clearTimeout(t); };
   }, [steps, idx]);
 
   const restart = () => {

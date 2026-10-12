@@ -29,7 +29,8 @@ export function Particles() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (reduce.matches) return;
     let w = 0, h = 0, raf = 0, last = performance.now();
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const weak = (navigator.hardwareConcurrency || 8) <= 4;
+    const dpr = Math.min(window.devicePixelRatio || 1, weak ? 1 : 1.5);
     const ps: P[] = [];
 
     const resize = () => {
@@ -48,9 +49,9 @@ export function Particles() {
       hue: SYMBOL_COLORS[(Math.random() * 4) | 0], burst: false,
     });
     resize();
-    const base = Math.round(Math.min(46, Math.max(18, (w * h) / 22000)));
+    const base = Math.round(Math.min(weak ? 22 : 40, Math.max(14, (w * h) / 26000)));
     for (let i = 0; i < base; i++) ps.push(ambient());
-    for (let i = 0; i < 7; i++) ps.push(symbol());
+    for (let i = 0; i < (weak ? 4 : 7); i++) ps.push(symbol());
 
     const onBurst = (e: Event) => {
       const d = (e as CustomEvent).detail || {};
