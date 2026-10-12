@@ -1,0 +1,615 @@
+{
+ "ps4-power": {
+  "src": "/guide/ps4-power-94d3b033",
+  "w": 1600,
+  "h": 869,
+  "sha": "72049a09",
+  "pdf": "PS4 Primary.pdf",
+  "page": 2,
+  "markers": [
+   {
+    "type": "target",
+    "label": "PS dugme",
+    "x": 48.1,
+    "y": 75.5,
+    "w": 5.3,
+    "h": 8.2
+   }
+  ]
+ },
+ "ps4-new-user": {
+  "src": "/guide/ps4-new-user-0b5ff493",
+  "w": 1600,
+  "h": 880,
+  "sha": "794ee574",
+  "pdf": "PS4 Primary.pdf",
+  "page": 3,
+  "markers": [
+   {
+    "type": "target",
+    "label": "New User",
+    "x": 42.9,
+    "y": 41.4,
+    "w": 16.7,
+    "h": 44.1
+   }
+  ]
+ },
+ "ps4-agreement": {
+  "src": "/guide/ps4-agreement-7b83c6df",
+  "w": 1600,
+  "h": 824,
+  "sha": "34a1f4b4",
+  "pdf": "PS4 Primary.pdf",
+  "page": 4,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Accept",
+    "x": 53.1,
+    "y": 89.0,
+    "w": 23.4,
+    "h": 9.1
+   }
+  ]
+ },
+ "ps4-sign-in-manually": {
+  "src": "/guide/ps4-sign-in-manually-6fe22102",
+  "w": 1600,
+  "h": 790,
+  "sha": "5d584818",
+  "pdf": "PS4 Primary.pdf",
+  "page": 5,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Sign In Manually",
+    "x": 12.4,
+    "y": 87.2,
+    "w": 37.2,
+    "h": 9.1
+   }
+  ]
+ },
+ "ps4-sign-in-form": {
+  "src": "/guide/ps4-sign-in-form-e0867d84",
+  "w": 1600,
+  "h": 811,
+  "sha": "0eac7558",
+  "pdf": "PS4 Primary.pdf",
+  "page": 6,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Email",
+    "x": 24.4,
+    "y": 43.5,
+    "w": 53.8,
+    "h": 9.1
+   },
+   {
+    "type": "target",
+    "label": "Lozinka",
+    "x": 24.4,
+    "y": 58.5,
+    "w": 53.8,
+    "h": 8.8
+   },
+   {
+    "type": "target",
+    "label": "Sign In",
+    "x": 24.4,
+    "y": 72.5,
+    "w": 53.8,
+    "h": 8.7
+   }
+  ]
+ },
+ "ps4-2step": {
+  "src": "/guide/ps4-2step-65b35754",
+  "w": 1600,
+  "h": 819,
+  "sha": "b71e014e",
+  "pdf": "PS4 Primary.pdf",
+  "page": 7,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Kod",
+    "x": 28.6,
+    "y": 57.1,
+    "w": 45.0,
+    "h": 9.5
+   }
+  ]
+ },
+ "ps4-activate-primary": {
+  "src": "/guide/ps4-activate-primary-c9aa41bd",
+  "w": 1600,
+  "h": 844,
+  "sha": "3c95b0b6",
+  "pdf": "PS4 Primary.pdf",
+  "page": 8,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Izaberite",
+    "x": 53.1,
+    "y": 85.4,
+    "w": 23.1,
+    "h": 8.5
+   }
+  ]
+ },
+ "ps4-activate-secondary": {
+  "src": "/guide/ps4-activate-secondary-97963abc",
+  "w": 1600,
+  "h": 883,
+  "sha": "2ef57baf",
+  "pdf": "PS4 Secondary.pdf",
+  "page": 8,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Do Not Activate",
+    "x": 27.2,
+    "y": 76.9,
+    "w": 21.2,
+    "h": 7.0
+   },
+   {
+    "type": "forbidden",
+    "label": "NE",
+    "x": 51.4,
+    "y": 76.9,
+    "w": 21.4,
+    "h": 7.1
+   }
+  ]
+ },
+ "ps4-library-start": {
+  "src": "/guide/ps4-library-start-b26ac563",
+  "w": 1600,
+  "h": 1054,
+  "sha": "85da6acf",
+  "pdf": "PS4 Primary.pdf",
+  "page": 9,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Library",
+    "x": 22.8,
+    "y": 24.3,
+    "w": 31.8,
+    "h": 58.0
+   }
+  ]
+ },
+ "ps4-library-purchased": {
+  "src": "/guide/ps4-library-purchased-151b4d2d",
+  "w": 1600,
+  "h": 880,
+  "sha": "3c396665",
+  "pdf": "PS4 Primary.pdf",
+  "page": 9,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Purchased",
+    "x": 3.5,
+    "y": 61.1,
+    "w": 19.6,
+    "h": 9.0
+   }
+  ]
+ },
+ "ps4-psplus-bar": {
+  "src": "/guide/ps4-psplus-bar-aebd1422",
+  "w": 1600,
+  "h": 177,
+  "sha": "abaa9e06",
+  "pdf": "PS4 Primary.pdf",
+  "page": 10,
+  "markers": [
+   {
+    "type": "target",
+    "label": "PlayStation Plus",
+    "x": 0.0,
+    "y": 1.4,
+    "w": 13.7,
+    "h": 97.1
+   }
+  ]
+ },
+ "ps4-psplus-home": {
+  "src": "/guide/ps4-psplus-home-600ee333",
+  "w": 1600,
+  "h": 872,
+  "sha": "658486cb",
+  "pdf": "PS4 Primary.pdf",
+  "page": 10,
+  "markers": [
+   {
+    "type": "target",
+    "label": "PlayStation Plus",
+    "x": 0.9,
+    "y": 1.3,
+    "w": 4.9,
+    "h": 7.6
+   }
+  ]
+ },
+ "ps5-profile-icon": {
+  "src": "/guide/ps5-profile-icon-3955c523",
+  "w": 1600,
+  "h": 382,
+  "sha": "d86ec962",
+  "pdf": "PS5 Primary.pdf",
+  "page": 2,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Profil",
+    "x": 82.0,
+    "y": 3.4,
+    "w": 3.2,
+    "h": 13.6
+   }
+  ]
+ },
+ "ps5-switch-user": {
+  "src": "/guide/ps5-switch-user-4220173e",
+  "w": 1600,
+  "h": 884,
+  "sha": "1dc0fdb6",
+  "pdf": "PS5 Primary.pdf",
+  "page": 3,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Switch User",
+    "x": 62.4,
+    "y": 45.9,
+    "w": 35.0,
+    "h": 9.6
+   }
+  ]
+ },
+ "ps5-welcome-add-user": {
+  "src": "/guide/ps5-welcome-add-user-7df2e198",
+  "w": 1600,
+  "h": 1206,
+  "sha": "598f898a",
+  "pdf": "PS5 Primary.pdf",
+  "page": 4,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Add User",
+    "x": 27.9,
+    "y": 36.5,
+    "w": 31.3,
+    "h": 42.1
+   }
+  ]
+ },
+ "ps5-get-started": {
+  "src": "/guide/ps5-get-started-8dcb82cb",
+  "w": 1538,
+  "h": 790,
+  "sha": "822c17bf",
+  "pdf": "PS5 Primary.pdf",
+  "page": 5,
+  "markers": [
+   {
+    "type": "target",
+    "label": "GET STARTED",
+    "x": 4.0,
+    "y": 74.9,
+    "w": 43.1,
+    "h": 12.0
+   },
+   {
+    "type": "forbidden",
+    "label": "NE",
+    "x": 52.0,
+    "y": 22.0,
+    "w": 45.0,
+    "h": 68.0
+   }
+  ]
+ },
+ "ps5-license": {
+  "src": "/guide/ps5-license-47c48eed",
+  "w": 1600,
+  "h": 888,
+  "sha": "da978be3",
+  "pdf": "PS5 Primary.pdf",
+  "page": 6,
+  "markers": [
+   {
+    "type": "target",
+    "label": "I Agree",
+    "x": 78.1,
+    "y": 82.0,
+    "w": 10.1,
+    "h": 6.2
+   },
+   {
+    "type": "target",
+    "label": "Confirm",
+    "x": 67.7,
+    "y": 91.4,
+    "w": 31.0,
+    "h": 8.4
+   }
+  ]
+ },
+ "ps5-sign-in": {
+  "src": "/guide/ps5-sign-in-5afb3cd1",
+  "w": 1600,
+  "h": 784,
+  "sha": "e6b0e398",
+  "pdf": "PS5 Primary.pdf",
+  "page": 7,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Email",
+    "x": 8.2,
+    "y": 31.6,
+    "w": 35.9,
+    "h": 10.9
+   },
+   {
+    "type": "target",
+    "label": "Lozinka",
+    "x": 8.2,
+    "y": 47.9,
+    "w": 35.9,
+    "h": 11.4
+   },
+   {
+    "type": "target",
+    "label": "Sign In",
+    "x": 9.7,
+    "y": 66.2,
+    "w": 34.4,
+    "h": 9.9
+   }
+  ]
+ },
+ "ps5-2step": {
+  "src": "/guide/ps5-2step-7130cbc7",
+  "w": 1600,
+  "h": 878,
+  "sha": "0b13e622",
+  "pdf": "PS5 Primary.pdf",
+  "page": 8,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Kod",
+    "x": 30.1,
+    "y": 56.4,
+    "w": 39.3,
+    "h": 12.7
+   },
+   {
+    "type": "target",
+    "label": "OK",
+    "x": 35.0,
+    "y": 84.8,
+    "w": 28.5,
+    "h": 10.3
+   }
+  ]
+ },
+ "ps5-privacy": {
+  "src": "/guide/ps5-privacy-e8ed85de",
+  "w": 1600,
+  "h": 902,
+  "sha": "bc83d76b",
+  "pdf": "PS5 Primary.pdf",
+  "page": 9,
+  "markers": []
+ },
+ "ps5-console-sharing-primary": {
+  "src": "/guide/ps5-console-sharing-primary-dc6277c9",
+  "w": 1600,
+  "h": 846,
+  "sha": "e19bd237",
+  "pdf": "PS5 Primary.pdf",
+  "page": 10,
+  "markers": [
+   {
+    "type": "target",
+    "label": "ENABLE",
+    "x": 49.3,
+    "y": 84.0,
+    "w": 28.2,
+    "h": 11.4
+   }
+  ]
+ },
+ "ps5-console-sharing-secondary": {
+  "src": "/guide/ps5-console-sharing-secondary-7ffc6743",
+  "w": 1600,
+  "h": 865,
+  "sha": "2b7a794e",
+  "pdf": "PS5 Secondary.pdf",
+  "page": 10,
+  "markers": [
+   {
+    "type": "target",
+    "label": "DON'T ENABLE",
+    "x": 22.0,
+    "y": 85.0,
+    "w": 26.0,
+    "h": 13.0
+   },
+   {
+    "type": "forbidden",
+    "label": "NE",
+    "x": 50.0,
+    "y": 85.0,
+    "w": 28.0,
+    "h": 13.0
+   }
+  ]
+ },
+ "ps5-secure-account": {
+  "src": "/guide/ps5-secure-account-51c5fb4b",
+  "w": 1600,
+  "h": 1024,
+  "sha": "604f96e7",
+  "pdf": "PS5 Primary.pdf",
+  "page": 11,
+  "markers": [
+   {
+    "type": "target",
+    "label": "OK",
+    "x": 34.5,
+    "y": 86.3,
+    "w": 34.5,
+    "h": 8.4
+   }
+  ]
+ },
+ "ps5-add-mobile": {
+  "src": "/guide/ps5-add-mobile-0d56506e",
+  "w": 1600,
+  "h": 963,
+  "sha": "ab8a75c5",
+  "pdf": "PS5 Primary.pdf",
+  "page": 11,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Do This Later",
+    "x": 81.3,
+    "y": 90.6,
+    "w": 18.6,
+    "h": 8.1
+   }
+  ]
+ },
+ "ps5-game-library": {
+  "src": "/guide/ps5-game-library-9ef5f7f8",
+  "w": 1600,
+  "h": 531,
+  "sha": "b933ca69",
+  "pdf": "PS5 Primary.pdf",
+  "page": 12,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Your Collection",
+    "x": 17.2,
+    "y": 17.3,
+    "w": 11.5,
+    "h": 10.4
+   }
+  ]
+ },
+ "ps5-game-download": {
+  "src": "/guide/ps5-game-download-91d05709",
+  "w": 1600,
+  "h": 769,
+  "sha": "7d29bd10",
+  "pdf": "PS5 Primary.pdf",
+  "page": 12,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Download",
+    "x": 8.4,
+    "y": 74.8,
+    "w": 19.2,
+    "h": 8.9
+   }
+  ]
+ },
+ "ps5-home-library": {
+  "src": "/guide/ps5-home-library-648d1f2a",
+  "w": 1600,
+  "h": 344,
+  "sha": "90d4cd8f",
+  "pdf": "PS5 Primary.pdf",
+  "page": 12,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Game Library",
+    "x": 61.7,
+    "y": 24.3,
+    "w": 6.8,
+    "h": 25.7
+   }
+  ]
+ },
+ "ps5-psplus-tile": {
+  "src": "/guide/ps5-psplus-tile-9162858e",
+  "w": 1600,
+  "h": 304,
+  "sha": "1a689351",
+  "pdf": "PS5 Primary.pdf",
+  "page": 13,
+  "markers": [
+   {
+    "type": "target",
+    "label": "PlayStation Plus",
+    "x": 7.4,
+    "y": 28.2,
+    "w": 9.7,
+    "h": 51.1
+   }
+  ]
+ },
+ "ps5-psplus-catalog": {
+  "src": "/guide/ps5-psplus-catalog-6ad27d83",
+  "w": 1600,
+  "h": 900,
+  "sha": "b9e36155",
+  "pdf": "PS5 Primary.pdf",
+  "page": 13,
+  "markers": []
+ },
+ "ps5-privacy-profiles": {
+  "src": "/guide/ps5-privacy-profiles-3457f4bc",
+  "w": 1600,
+  "h": 900,
+  "sha": "b2b4f2e1",
+  "pdf": "(dopunska slika) ps5-privacy-profiles.png",
+  "page": 0,
+  "maxW": 825,
+  "markers": []
+ },
+ "ps5-your-information": {
+  "src": "/guide/ps5-your-information-960499ee",
+  "w": 1194,
+  "h": 670,
+  "sha": "4d8cbcd3",
+  "pdf": "(dopunska slika) ps5-your-information.jpg",
+  "page": 0,
+  "maxW": 597,
+  "markers": [
+   {
+    "type": "target",
+    "label": "First name",
+    "x": 8.5,
+    "y": 27,
+    "w": 41,
+    "h": 12
+   },
+   {
+    "type": "target",
+    "label": "Last name",
+    "x": 50.5,
+    "y": 27,
+    "w": 42,
+    "h": 12
+   }
+  ]
+ }
+}

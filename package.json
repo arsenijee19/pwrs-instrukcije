@@ -1,0 +1,35 @@
+{
+  "name": "pwrs-instrukcije",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "admin:hash": "node scripts/hash-password.mjs",
+    "assets": "python3 scripts/extract_assets.py",
+    "build:cpanel": "bash scripts/build-cpanel.sh"
+  },
+  "dependencies": {
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "server-only": "^0.0.1",
+    "sharp": "^0.35.5",
+    "zod": "^4.6.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}

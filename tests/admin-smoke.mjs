@@ -1,0 +1,63 @@
+// Smoke test admin API-ja. Pokretanje: ADMIN_PASSWORD=... BASE=http://localhost:3100 node tests/admin-smoke.mjs
+import assert from "node:assert/strict";
+import fs from "node:fs";
+const BASE = process.env.BASE || "http://localhost:3100";
+const PW = process.env.ADMIN_PASSWORD;
+const J = { "content-type": "application/json", origin: BASE };
+let cookie = "", csrf = "";
+const call = async (m, u, body, h = {}) => fetch(BASE + u, { method: m, headers: { ...J, cookie, ...h }, body: body === undefined ? undefined : typeof body === "string" || body instanceof FormData ? body : JSON.stringify(body) });
+
+assert.equal((await call("GET", "/api/admin/state")).status, 401, "state bez sesije");
+assert.equal((await call("PUT", "/api/admin/state", {})).status, 401, "PUT bez sesije");
+assert.equal((await call("POST", "/api/admin/upload", new FormData())).status, 401, "upload bez sesije");
+assert.equal((await call("POST", "/api/admin/login", { password: "pogresna" })).status, 401);
+const ok = await call("POST", "/api/admin/login", { password: PW });
+assert.equal(ok.status, 200);
+cookie = ok.headers.getSetCookie().map((c) => c.split(";")[0]).join("; ");
+assert.match(ok.headers.getSetCookie()[0], /HttpOnly/i);
+assert.match(ok.headers.getSetCookie()[0], /SameSite=strict/i);
+const st = await (await call("GET", "/api/admin/state")).json();
+csrf = st.csrf;
+assert.ok(csrf && st.draft.guides["ps5-primary"].length > 5);
+assert.equal((await call("PUT", "/api/admin/state", st.draft)).status, 403, "PUT bez CSRF");
+assert.equal((await call("PUT", "/api/admin/state", st.draft, { "x-csrf-token": csrf, origin: "https://evil.example" })).status, 403, "pogrešan origin");
+const bad = structuredClone(st.draft); bad.settings.supportUrl = "javascript:alert(1)";
+assert.equal((await call("PUT", "/api/admin/state", bad, { "x-csrf-token": csrf })).status, 400, "javascript: URL odbijen");
+const badImg = structuredClone(st.draft); badImg.guides["ps4-primary"][0].images[0].src = "https://evil.example/x";
+assert.equal((await call("PUT", "/api/admin/state", badImg, { "x-csrf-token": csrf })).status, 400, "spoljna slika odbijena");
+// izmena + čuvanje nacrta + objava
+const d = structuredClone(st.draft); d.guides["ps4-primary"][0].title = "Test naslov <script>alert(1)</script>";
+const put = await call("PUT", "/api/admin/state", d, { "x-csrf-token": csrf });
+assert.equal(put.status, 200); assert.equal((await put.json()).dirty, true);
+const before = await (await fetch(BASE + "/ps4-primary")).text();
+assert.ok(!before.includes("Test naslov"), "javni sajt ne vidi nacrt");
+assert.equal((await call("POST", "/api/admin/state", { action: "publish" }, { "x-csrf-token": csrf })).status, 200);
+const after = await (await fetch(BASE + "/ps4-primary")).text();
+assert.ok(after.includes("Test naslov"), "objavljeno je vidljivo");
+assert.ok(!after.includes("<script>alert(1)</script>"), "skripta nije izvršno ubačena");
+await call("POST", "/api/admin/state", { action: "reset" }, { "x-csrf-token": csrf });
+await call("POST", "/api/admin/state", { action: "publish" }, { "x-csrf-token": csrf });
+// engleski sadržaj: poseban nacrt i objava
+const stEn = await (await call("GET", "/api/admin/state?lang=en")).json();
+assert.equal(stEn.lang, "en");
+assert.match(stEn.draft.final.title, /successfully/);
+const dEn = structuredClone(stEn.draft); dEn.guides["ps4-primary"][0].title = "EN test title";
+assert.equal((await call("PUT", "/api/admin/state?lang=en", dEn, { "x-csrf-token": csrf })).status, 200);
+assert.ok(!(await (await fetch(BASE + "/en/ps4-primary")).text()).includes("EN test title"), "EN nacrt nije javan");
+assert.equal((await call("POST", "/api/admin/state?lang=en", { action: "publish" }, { "x-csrf-token": csrf })).status, 200);
+assert.ok((await (await fetch(BASE + "/en/ps4-primary")).text()).includes("EN test title"), "EN objavljeno");
+assert.ok(!(await (await fetch(BASE + "/ps4-primary")).text()).includes("EN test title"), "SR nepromenjen");
+await call("POST", "/api/admin/state?lang=en", { action: "reset" }, { "x-csrf-token": csrf });
+await call("POST", "/api/admin/state?lang=en", { action: "publish" }, { "x-csrf-token": csrf });
+// upload
+const fd = new FormData(); fd.append("file", new Blob(["<?php echo 1;"], { type: "image/png" }), "x.png");
+assert.equal((await fetch(BASE + "/api/admin/upload", { method: "POST", headers: { cookie, origin: BASE, "x-csrf-token": csrf }, body: fd })).status, 415, "ne-slika odbijena");
+const real = fs.readFileSync("public/guide/" + fs.readdirSync("public/guide").find((f) => f.startsWith("ps5-get-started-") && f.endsWith("-800.webp")));
+const fd2 = new FormData(); fd2.append("file", new Blob([real], { type: "image/webp" }), "a.webp");
+const up = await fetch(BASE + "/api/admin/upload", { method: "POST", headers: { cookie, origin: BASE, "x-csrf-token": csrf }, body: fd2 });
+assert.equal(up.status, 200);
+const meta = await up.json();
+assert.match(meta.src, /^\/media\/[a-f0-9]{20}$/);
+assert.equal((await fetch(BASE + meta.src + "-800.webp")).status, 200);
+assert.equal((await fetch(BASE + "/media/../../etc/passwd")).status, 404);
+console.log("ADMIN SMOKE OK");
