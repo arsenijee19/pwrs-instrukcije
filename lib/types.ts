@@ -6,17 +6,17 @@ export const PRODUCTS = ["game", "ps_plus"] as const;
 export type Product = (typeof PRODUCTS)[number];
 
 export const GUIDE_META: Record<GuideType, { console: "PS4" | "PS5"; kind: "primary" | "secondary"; label: string; short: string; hint: string }> = {
-  "ps4-primary": { console: "PS4", kind: "primary", label: "PS4 • Sa svog naloga", short: "PS4 Primary", hint: "Igru ili pretplatu preuzimate preko naloga koji ste dobili od nas, a igrate sa svog ličnog profila." },
-  "ps4-secondary": { console: "PS4", kind: "secondary", label: "PS4 • Sa dobijenog naloga", short: "PS4 Secondary", hint: "Igru ili pretplatu preuzimate i igrate na nalogu koji ste dobili od nas." },
-  "ps5-primary": { console: "PS5", kind: "primary", label: "PS5 • Sa svog naloga", short: "PS5 Primary", hint: "Igru ili pretplatu preuzimate preko naloga koji ste dobili od nas, a igrate sa svog ličnog profila." },
-  "ps5-secondary": { console: "PS5", kind: "secondary", label: "PS5 • Sa dobijenog naloga", short: "PS5 Secondary", hint: "Igru ili pretplatu preuzimate i igrate na nalogu koji ste dobili od nas." },
+  "ps4-primary": { console: "PS4", kind: "primary", label: "PS4 Primarni nalog", short: "PS4 Primary", hint: "Igru ili pretplatu preuzimate preko naloga koji ste dobili od nas, a igrate sa svog ličnog profila." },
+  "ps4-secondary": { console: "PS4", kind: "secondary", label: "PS4 Sekundarni nalog", short: "PS4 Secondary", hint: "Igru ili pretplatu preuzimate i igrate na nalogu koji ste dobili od nas." },
+  "ps5-primary": { console: "PS5", kind: "primary", label: "PS5 Primarni nalog", short: "PS5 Primary", hint: "Igru ili pretplatu preuzimate preko naloga koji ste dobili od nas, a igrate sa svog ličnog profila." },
+  "ps5-secondary": { console: "PS5", kind: "secondary", label: "PS5 Sekundarni nalog", short: "PS5 Secondary", hint: "Igru ili pretplatu preuzimate i igrate na nalogu koji ste dobili od nas." },
 };
 import { UI, type Lang } from "./i18n";
 /** Metapodaci vodiča na izabranom jeziku. */
 export function guideMeta(g: GuideType, lang: Lang = "sr") {
   const m = GUIDE_META[g];
   const primary = m.kind === "primary";
-  return { ...m, label: UI[lang].metaLabel(m.console, primary), hint: UI[lang].metaHint(primary) };
+  return { ...m, label: UI[lang].metaLabel(m.console, primary), sub: UI[lang].metaSub(primary), hint: UI[lang].metaHint(primary) };
 }
 export function isGuideType(v: string): v is GuideType {
   return (GUIDE_TYPES as readonly string[]).includes(v);

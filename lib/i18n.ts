@@ -24,7 +24,8 @@ export const UI = {
     cardTitleSecondary: "Igram sa dobijenog naloga",
     cardPrimary: (c: string) => `Kupili ste Primary nalog za ${c}. Igru ili pretplatu preuzimate preko naloga koji ste dobili od nas, a igrate sa svog ličnog profila.`,
     cardSecondary: (c: string) => `Kupili ste Secondary nalog za ${c}. Igru ili pretplatu preuzimate i igrate na nalogu koji ste dobili od nas.`,
-    metaLabel: (c: string, primary: boolean) => `${c} • ${primary ? "Sa svog naloga" : "Sa dobijenog naloga"}`,
+    metaLabel: (c: string, primary: boolean) => `${c} ${primary ? "Primarni nalog" : "Sekundarni nalog"}`,
+    metaSub: (primary: boolean) => (primary ? "Igranje sa svog naloga" : "Igranje sa dobijenog naloga"),
     metaHint: (primary: boolean) => primary
       ? "Igru ili pretplatu preuzimate preko naloga koji ste dobili od nas, a igrate sa svog ličnog profila."
       : "Igru ili pretplatu preuzimate i igrate na nalogu koji ste dobili od nas.",
@@ -85,7 +86,8 @@ export const UI = {
     cardTitleSecondary: "I play from the received account",
     cardPrimary: (c: string) => `You bought a Primary account for ${c}. You download the game or subscription through the account we sent you, and play from your own personal profile.`,
     cardSecondary: (c: string) => `You bought a Secondary account for ${c}. You download and play the game or subscription on the account we sent you.`,
-    metaLabel: (c: string, primary: boolean) => `${c} • ${primary ? "Own account" : "Received account"}`,
+    metaLabel: (c: string, primary: boolean) => `${c} ${primary ? "Primary account" : "Secondary account"}`,
+    metaSub: (primary: boolean) => (primary ? "Playing from your own account" : "Playing from the received account"),
     metaHint: (primary: boolean) => primary
       ? "You download the game or subscription through the account we sent you, and play from your own personal profile."
       : "You download and play the game or subscription on the account we sent you.",

@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: Promise<{ guide: st
   if (!isGuideType(guide)) return {};
   const m = guideMeta(guide, "en");
   return {
-    title: { absolute: `${m.console} ${m.kind === "primary" ? "Primary" : "Secondary"}: ${m.label} | PlayWorld instructions` },
-    description: `Step-by-step guide for ${m.label}. ${m.hint}`,
+    title: { absolute: `${m.label}: ${m.sub} | PlayWorld instructions` },
+    description: `Step-by-step guide for the ${m.label} (${m.sub.toLowerCase()}). ${m.hint}`,
     alternates: { canonical: `/en/${guide}`, languages: { sr: `/${guide}`, en: `/en/${guide}` } },
   };
 }

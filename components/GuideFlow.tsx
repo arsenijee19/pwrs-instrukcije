@@ -134,7 +134,7 @@ export function GuideFlow({ guide, content, preview = false, lang = "sr" }: { gu
   const phaseText =
     phase === "steps" && steps.length > 0
       ? `${ui.stepOf(idx + 1, steps.length)}${s.product ? ` · ${s.product === "game" ? ui.gameShort : ui.plusShort}` : ""}`
-      : phase === "terms" ? ui.phaseTerms : ui.phaseProduct;
+      : meta.sub;
   const iconBtn = "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-line bg-panel/70 text-slate-200 no-underline transition-transform active:scale-95";
   const header = (
     <header className="flex-none border-b border-line bg-ink/80">
@@ -351,6 +351,7 @@ function FinalScreen({ guide, lang, product, content, promos, onBack, onRestart 
       <div className="card mt-5 p-5">
         <p className="text-sm font-bold uppercase tracking-wider text-ps">{ui.yourChoice}</p>
         <p className="mt-1 text-xl font-extrabold">{meta.label}</p>
+        <p className="text-sm text-slate-400">{meta.sub}</p>
         <p className="text-slate-300">{product === "game" ? ui.gameLabel : ui.plusLabel}</p>
         <ul className="mt-4 space-y-3">
           {lines.filter(Boolean).map((l, i) => <li key={i} className="flex gap-2.5 leading-relaxed"><span aria-hidden>✔️</span><span>{l}</span></li>)}
