@@ -209,6 +209,13 @@ function ps5(kind: "primary" | "secondary", lang: Lang): Step[] {
       images: [img("ps5-license", "PS5 System Software License Agreement, I Agree and Confirm")],
       ...pdfOf("ps5-license"),
     }),
+    step(t("sign-in-manually"), {
+      title: x("Izaberite Sign In Manually", "Select Sign In Manually"),
+      body: x("Na ekranu **Sign In with QR Code** izaberite opciju **Sign In Manually** (ručna prijava).\n\nMolimo Vas da ne birate opcije Create an Account i Skip and Play Offline.",
+        "On the **Sign In with QR Code** screen, select **Sign In Manually**.\n\nPlease do not select Create an Account or Skip and Play Offline."),
+      level: "important",
+      images: [img("ps5-sign-in-manually", "PS5 Sign In with QR Code screen, Sign In Manually option")],
+    }),
     step(t("sign-in"), {
       title: x("Upišite podatke za prijavu", "Enter your sign-in details"),
       body: SIGN_IN_BODY + x("\n\nMolimo Vas da ne birate opciju Create an Account, jer nalog već imate.", "\n\nPlease do not select Create an Account, because you already have an account."),

@@ -611,5 +611,31 @@
     "h": 12
    }
   ]
+ },
+ "ps5-sign-in-manually": {
+  "src": "/guide/ps5-sign-in-manually-0ab77ee4",
+  "w": 1600,
+  "h": 892,
+  "sha": "0ab77ee4",
+  "pdf": "",
+  "page": 0,
+  "markers": [
+   {
+    "type": "target",
+    "label": "Sign In Manually",
+    "x": 16.0,
+    "y": 85.5,
+    "w": 21.0,
+    "h": 9.5
+   },
+   {
+    "type": "forbidden",
+    "label": "NE",
+    "x": 37.2,
+    "y": 85.5,
+    "w": 21.8,
+    "h": 9.5
+   }
+  ]
  }
 }
